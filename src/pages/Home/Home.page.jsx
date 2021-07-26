@@ -1,39 +1,24 @@
-import React, { useRef } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import React from 'react';
 
-import { useAuth } from '../../providers/Auth';
+import Header from '../../components/Header';
+import ListVideos from '../../components/ListVideos';
+
+import { HomeContent } from './Styles';
+
+import { mockVideos } from '../../MockData';
+
 import './Home.styles.css';
 
-function HomePage() {
-  const history = useHistory();
-  const sectionRef = useRef(null);
-  const { authenticated, logout } = useAuth();
 
-  function deAuthenticate(event) {
-    event.preventDefault();
-    logout();
-    history.push('/');
-  }
 
+export default function HomePage() {
   return (
-    <section className="homepage" ref={sectionRef}>
-      <h1>Hello stranger!</h1>
-      {authenticated ? (
-        <>
-          <h2>Good to have you back</h2>
-          <span>
-            <Link to="/" onClick={deAuthenticate}>
-              ← logout
-            </Link>
-            <span className="separator" />
-            <Link to="/secret">show me something cool →</Link>
-          </span>
-        </>
-      ) : (
-        <Link to="/login">let me in →</Link>
-      )}
-    </section>
-  );
+    <>
+      <Header/>
+        <h3>Welcome to Wizeline</h3>
+        <HomeContent>
+          <ListVideos data={mockVideos}/>
+        </HomeContent>
+    </>
+  )
 }
-
-export default HomePage;
