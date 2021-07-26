@@ -6,3 +6,10 @@
   font-size: 3rem;
   letter-spacing: -2px;
 }
+
+h3 {
+  padding-top: 0.5em;
+  text-align: center;
+  font-size: 300%;
+  font-family: monospace;
+}
