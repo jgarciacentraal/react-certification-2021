@@ -1,13 +1,13 @@
-import React from 'react'
+import React from 'react';
+import { User } from 'react-feather';
 
-import { ButtonLgn } from './Styles'
+import { ButtonLgn } from './Styles';
 
-import { ReactComponent as UserIcn } from './img/user.svg'
 
 export default function LoginBtn() {
   return (
     <ButtonLgn>
-      <UserIcn/>
+      <User data-testid="icon-svg" width={24}/>
     </ButtonLgn>
-  )
+  );
 }
