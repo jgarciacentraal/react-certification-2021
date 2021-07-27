@@ -31,26 +31,24 @@ function App() {
   return (
     <BrowserRouter>
       <AuthProvider>
-        
-          <Switch>
-            <Route exact path="/">
-              <HomePage />
-            </Route>
-            <Route exact path="/login">
-              <LoginPage />
-            </Route>
-            <Private exact path="/secret">
-              <SecretPage />
-            </Private>
-            <Route path="*">
-              <NotFound />
-            </Route>
-          </Switch>
-        
+        <Switch>
+          <Route exact path="/">
+            <HomePage />
+          </Route>
+          <Route exact path="/login">
+            <LoginPage />
+          </Route>
+          <Private exact path="/secret">
+            <SecretPage />
+          </Private>
+          <Route path="*">
+            <NotFound />
+          </Route>
+        </Switch>
       </AuthProvider>
     </BrowserRouter>
   );
 }
 
 export default App;
-//Componente Layout encierra app
+// Componente Layout encierra app
