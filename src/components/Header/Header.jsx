@@ -6,7 +6,6 @@ import ThemeBtn from '../ThemeBtn/index';
 import LoginBtn from '../LoginBtn/index';
 
 export default function Header({ handleSearch }) {
-
   return (
     <HeaderContainer>
       <Search handleSearch={handleSearch} />
