@@ -1,9 +1,8 @@
-import React from 'react'
+import React from 'react';
 
 import { VideoiFrame, VideoDetails, Title, Paragraph } from './Styles';
 
 export default function VideoDetail({ videoId, videoDetail }) {
-
   const { title, description } = videoDetail;
 
   return (
@@ -14,6 +13,5 @@ export default function VideoDetail({ videoId, videoDetail }) {
       </VideoDetails>
       <Paragraph data-testid="paragraph">{description}</Paragraph>
     </>
-  )
+  );
 }
-
