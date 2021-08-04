@@ -5,32 +5,21 @@ export const VideoiFrame = styled.iframe`
   height: 600px;
 `;
 
-export const VideoDetails = styled.div`
+export const VideoContainer = styled.div`
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 10px;
-  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 1.2rem;
 `;
-
-export const Title = styled.h2`
-  margin: 0px;
+export const VideoInfoContainer = styled.div`
+  padding: 0.8rem;
 `;
-
-export const Button = styled.button`
-  border: 2px solid ${({ theme }) => theme.toggleBorder};
-  border-radius: 5px;
-  width: 160px;
-  height: 30px;
-  background-color: transparent;
-  margin-right: 5px;
-  cursor: pointer;
-  overflow: hidden;
-  padding: 0px;
-  position: relative;
-  outline: none;
+export const VideoTitle = styled.h2`
+  margin-bottom: 1.4rem;
+  font-size: 18px;
 `;
-
-export const Paragraph = styled.p`
-  padding: 10px;
+export const VideoText = styled.p`
+  font-family: 'Roboto';
+  text-align: justify;
+  font-size: 14px;
 `;

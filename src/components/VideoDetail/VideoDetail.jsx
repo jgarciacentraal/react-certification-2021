@@ -1,17 +1,28 @@
 import React from 'react';
 
-import { VideoiFrame, VideoDetails, Title, Paragraph } from './Styles';
+import { 
+  VideoContainer,
+  VideoInfoContainer,
+  VideoTitle,
+  VideoText,
+  VideoiFrame } from './Styles';
 
-export default function VideoDetail({ videoId, videoDetail }) {
-  const { title, description } = videoDetail;
+export default function VideoDetail({ videoDetail }) {
 
+  const { videoId } = videoDetail.id;
+  const { title, description } = videoDetail.snippet;
+  
   return (
     <>
-      <VideoiFrame title="playVideo" src={`https://www.youtube.com/embed/${videoId}`} />
-      <VideoDetails>
-        <Title>{title}</Title>
-      </VideoDetails>
-      <Paragraph data-testid="paragraph">{description}</Paragraph>
+      <VideoContainer>
+        <VideoiFrame title="playVideo" src={`https://www.youtube.com/embed/${videoId}`} /> 
+      <VideoInfoContainer>
+        <VideoTitle data-testid={title}>{title}</VideoTitle>
+        <VideoText>{description}</VideoText>
+      </VideoInfoContainer>
+    </VideoContainer>
     </>
   );
 }
+
+
