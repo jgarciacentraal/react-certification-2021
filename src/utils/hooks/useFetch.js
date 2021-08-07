@@ -20,10 +20,10 @@ export const useFetch = (param, fetching) => {
         setVideos(data);
       } catch (err) {
         setError(true);
+      } finally {
+        setLoading(false);
       }
     }
-
-    setLoading(false);
   }, [param, fetching]);
 
   useEffect(() => {

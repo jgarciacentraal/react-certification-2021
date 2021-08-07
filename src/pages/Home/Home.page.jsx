@@ -14,10 +14,16 @@ export default function HomePage() {
     setParam(value);
   };
 
+  if (loading) return <div data-testid="text-loading-home" >Loading...</div>;
+
+  if (error) return <div>Network error</div>;
+
   return (
+
+    
     <>
       <Header handleSearch={handleSearch} />
-      <h3>Welcome to Wizeline</h3>
+        <h3>Welcome to Wizeline</h3>
       <HomeContent>
         <ListVideos data={{ videos, loading, error }} />
       </HomeContent>
