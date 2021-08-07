@@ -3,7 +3,6 @@ import { render, screen } from '@testing-library/react';
 
 import HomePage from '../../pages/Home/Home.page';
 
-
 describe('Home page', () => {
   test('renders a title', () => {
     render(<HomePage />);
@@ -12,4 +11,3 @@ describe('Home page', () => {
     expect(titleElement).toBeInTheDocument();
   });
 });
-
