@@ -11,7 +11,7 @@ export default function Search({ handleSearch }) {
     <SearchContainer>
       <InputText
         data-testid="search-input"
-        placeholder="Buscar contenido"
+        placeholder="Buscar"
         onKeyDown={onHandleSearch}
       />
     </SearchContainer>

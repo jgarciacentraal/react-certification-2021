@@ -3,14 +3,13 @@ import { render, screen } from '@testing-library/react';
 
 import HomePage from '../../pages/Home/Home.page';
 
-beforeEach(() => {
-  render(<HomePage />);
-});
 
-describe('Home', () => {
-  it('contains a title', () => {
-    const titleElement = screen.queryByText('Welcome to Wizeline');
+describe('Home page', () => {
+  test('renders a title', () => {
+    render(<HomePage />);
 
+    const titleElement = screen.getByTestId('text-loading-home');
     expect(titleElement).toBeInTheDocument();
   });
 });
+

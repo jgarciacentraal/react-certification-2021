@@ -14,7 +14,7 @@ export const Card = styled.div`
 export const VideoImagen = styled.img`
   justify-content: center;
   width: 100%;
-  height: auto;
+  height: 60%;
 `;
 
 export const VideoDetails = styled.div`
@@ -22,7 +22,7 @@ export const VideoDetails = styled.div`
   flex-direction: column;
   flex: 2 1 100%;
   h5 {
-    font-size: 30px;
+    font-size: 28px;
     margin: 2px 5px 1px 5px;
     padding: 0px;
     font-family: Arial, Helvetica, sans-serif;
@@ -34,11 +34,11 @@ export const VideoDetails = styled.div`
     }
   }
   p {
-    font-size: 18px;
+    font-size: 14px;
     font-family: Arial, Helvetica, sans-serif;
     color: #a5a18f;
-    margin: 0px 0px 0px 5px;
-    padding: 0px;
+    margin: 0px 0px 5px 5px;
+    padding: 15px;
     @media (max-width: 1100px) {
       font-size: 1.5vw;
     }

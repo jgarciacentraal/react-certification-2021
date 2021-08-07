@@ -8,8 +8,9 @@ export const VideoiFrame = styled.iframe`
 export const VideoContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 190%;
   margin-bottom: 1.2rem;
+  padding: 2em;
 `;
 export const VideoInfoContainer = styled.div`
   padding: 0.8rem;

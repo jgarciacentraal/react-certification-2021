@@ -5,12 +5,13 @@ import { Card, VideoImagen, VideoDetails } from './Styles';
 import VideoDetail from '../VideoDetail/VideoDetail';
 
 export default function ListVideos({ data }) {
-  const [video, setVideo] = useState(null); // conditional rendering
+  const [video, setVideo] = useState(null);
   const { items } = data.videos;
 
   return (
     <>
-      {items && !video &&
+      {items &&
+        !video &&
         items.map((item) => (
           <Card
             key={item.id.videoId}
@@ -24,7 +25,7 @@ export default function ListVideos({ data }) {
             </VideoDetails>
           </Card>
         ))}
-        {video && <VideoDetail videoDetail={video} />}
+      {video && <VideoDetail videoDetail={video} />}
     </>
   );
 }
