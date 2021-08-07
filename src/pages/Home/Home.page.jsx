@@ -23,10 +23,9 @@ export default function HomePage() {
       <HomeContent>
         {loading ? (
           <div data-testid="text-loading-home">Loading...</div>
-        ): (
-            <ListVideos data={{ videos, loading, error }} />
+        ) : (
+          <ListVideos data={{ videos, loading, error }} />
         )}
-        
       </HomeContent>
     </>
   );
