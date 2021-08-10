@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
-
+// Styles 
+import './Home.styles.css';
+//Styled components
+import { HomeContent } from './Styles';
+//Componentes 
 import Header from '../../components/Header';
 import ListVideos from '../../components/ListVideos';
-import { HomeContent } from './Styles';
-import './Home.styles.css';
+//own hooks
 import { useFetch } from '../../utils/hooks/useFetch';
 
 export default function HomePage() {

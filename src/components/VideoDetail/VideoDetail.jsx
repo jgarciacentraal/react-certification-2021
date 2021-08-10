@@ -9,8 +9,9 @@ import {
 } from './Styles';
 
 export default function VideoDetail({ videoDetail }) {
-  const { videoId } = videoDetail.id;
-  const { title, description } = videoDetail.snippet;
+  console.log('items', videoDetail)
+  const { videoId } = videoDetail.video.id;
+  const { title, description } = videoDetail.video.snippet;
 
   return (
     <>
