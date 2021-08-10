@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
-
+// Styles 
+import './Home.styles.css';
+//Styled components
+import { HomeContent } from './Styles';
+//Componentes 
 import Header from '../../components/Header';
 import ListVideos from '../../components/ListVideos';
-import { HomeContent } from './Styles';
-import './Home.styles.css';
+//own hooks
 import { useFetch } from '../../utils/hooks/useFetch';
 
 export default function HomePage() {
@@ -14,18 +17,18 @@ export default function HomePage() {
     setParam(value);
   };
 
-  if (loading) return <div data-testid="text-loading-home" >Loading...</div>;
-
   if (error) return <div>Network error</div>;
 
   return (
-
-    
     <>
       <Header handleSearch={handleSearch} />
-        <h3>Welcome to Wizeline</h3>
+      <h3>Welcome to Wizeline</h3>
       <HomeContent>
-        <ListVideos data={{ videos, loading, error }} />
+        {loading ? (
+          <div data-testid="text-loading-home">Loading...</div>
+        ) : (
+          <ListVideos data={{ videos, loading, error }} />
+        )}
       </HomeContent>
     </>
   );

@@ -51,4 +51,4 @@ function App() {
 }
 
 export default App;
-// Componente Layout encierra app
+

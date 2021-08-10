@@ -1,9 +1,8 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import {useFetch} from '../../utils/hooks/useFetch';
+import { useFetch } from '../../utils/hooks/useFetch';
 
-//import { mockVideos } from '../../mockData';
-
+// import { mockVideos } from '../../mockData';
 
 const promiseControl = () => {
   let response;

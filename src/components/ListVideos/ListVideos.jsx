@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { Card, VideoImagen, VideoDetails } from './Styles';
 
-import VideoDetail from '../VideoDetail/VideoDetail';
+import Video from '../../pages/Video/Video.page'
 
 export default function ListVideos({ data }) {
   const [video, setVideo] = useState(null);
@@ -25,7 +25,7 @@ export default function ListVideos({ data }) {
             </VideoDetails>
           </Card>
         ))}
-      {video && <VideoDetail videoDetail={video} />}
+      {video && <Video videoDetail={{video, items}}/>}
     </>
   );
 }
