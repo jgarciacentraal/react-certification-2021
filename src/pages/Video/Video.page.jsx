@@ -1,23 +1,25 @@
 import React from 'react';
 
-import { GridContainer } from './Styles'
+import { VideoRow, VideoColumn, ListRow  } from './Styles';
 
-import VideoDetail from '../../components/VideoDetail/VideoDetail'
-//import List from '../../components/'
+import VideoDetail from '../../components/VideoDetail/VideoDetail';
+import List from '../../components/ListRelativeVideos/List'
 
 export default function Video({ videoDetail }) {
+  const { items } = videoDetail
   return (
-    //<div>Que vergas!!</div>
     <>
-    <GridContainer>
-    
-        <VideoDetail videoDetail={videoDetail} />
-      
-    
-      
-      
-    </GridContainer>
+      <VideoRow>
+        <VideoColumn>
+          <VideoDetail videoDetail={videoDetail} />
+          
+        </VideoColumn>
+        <ListRow>
+          <List items={items} />
+          
+        </ListRow>
+      </VideoRow>
+       
     </>
   );
 }
-

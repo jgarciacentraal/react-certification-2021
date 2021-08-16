@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const HeaderContainer = styled.nav`
+  width: 100%;
+  padding: 10px;
   font-size: 18px;
   position: sticky;
   top: 0;

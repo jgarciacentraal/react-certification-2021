@@ -9,7 +9,7 @@ import {
 } from './Styles';
 
 export default function VideoDetail({ videoDetail }) {
-  console.log('items', videoDetail)
+  console.log('items', videoDetail);
   const { videoId } = videoDetail.video.id;
   const { title, description } = videoDetail.video.snippet;
 
