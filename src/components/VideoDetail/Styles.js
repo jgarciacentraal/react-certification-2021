@@ -1,14 +1,8 @@
 import styled from 'styled-components';
 
-export const VideoiFrame = styled.iframe`
-  width: 100%;
-  height: 600px;
-`;
-
 export const VideoContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 190%;
   margin-bottom: 1.2rem;
   padding: 2em;
 `;
@@ -23,4 +17,9 @@ export const VideoText = styled.p`
   font-family: 'Roboto';
   text-align: justify;
   font-size: 14px;
+`;
+
+export const VideoiFrame = styled.iframe`
+  width: 100%;
+  height: 600px;
 `;

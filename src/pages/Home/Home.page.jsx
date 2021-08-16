@@ -1,35 +1,31 @@
-import React, { useState } from 'react';
-// Styles 
+import React from 'react';
+// Styles
 import './Home.styles.css';
-//Styled components
-import { HomeContent } from './Styles';
-//Componentes 
-import Header from '../../components/Header';
-import ListVideos from '../../components/ListVideos';
-//own hooks
-import { useFetch } from '../../utils/hooks/useFetch';
+// Styled components
+import { VideoContent, Title } from './Styles';
+// Componentes
+import VideoCard from '../../components/VideoCard';
 
-export default function HomePage() {
-  const [param, setParam] = useState('Wizeline');
-  const { videos, loading, error } = useFetch(param, true);
-
-  const handleSearch = (value) => {
-    setParam(value);
-  };
+export default function HomePage({ data }) {
+  console.log('data home page', data);
+  const { videos, loading, error } = data;
 
   if (error) return <div>Network error</div>;
+  if (loading) return <div>loading...</div>;
 
   return (
     <>
-      <Header handleSearch={handleSearch} />
-      <h3>Welcome to Wizeline</h3>
-      <HomeContent>
-        {loading ? (
-          <div data-testid="text-loading-home">Loading...</div>
-        ) : (
-          <ListVideos data={{ videos, loading, error }} />
-        )}
-      </HomeContent>
+      <section>
+        <Title>
+          <h3>Welcome to Wizeline</h3>
+        </Title>
+        <VideoContent>
+          {videos?.items &&
+            videos.items.map((item) => (
+              <VideoCard key={item.etag} data={item} videoList={videos} />
+            ))}
+        </VideoContent>
+      </section>
     </>
   );
 }

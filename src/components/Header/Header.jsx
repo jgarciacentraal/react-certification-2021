@@ -5,10 +5,10 @@ import Search from '../Search/index';
 import ThemeBtn from '../ThemeBtn/index';
 import LoginBtn from '../LoginBtn/index';
 
-export default function Header({ handleSearch }) {
+export default function Header({ handleChange }) {
   return (
     <HeaderContainer>
-      <Search handleSearch={handleSearch} />
+      <Search handleChange={handleChange} />
       <ThemeBtn />
       <LoginBtn />
     </HeaderContainer>
