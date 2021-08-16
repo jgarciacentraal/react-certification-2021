@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import AuthProvider from '../../providers/Auth';
@@ -21,7 +21,7 @@ function App() {
   const handleChange = (value) => {
     setParam(value);
   };
-  
+
   return (
     <BrowserRouter>
       <AuthProvider>
@@ -29,7 +29,7 @@ function App() {
           <Header handleChange={handleChange} />
           <Switch>
             <Route exact path="/">
-              <HomePage data={{ videos, loading, error }}  />
+              <HomePage data={{ videos, loading, error }} />
             </Route>
             <Route exact path="/video/:id">
               <VideoPage />
@@ -44,7 +44,7 @@ function App() {
               <NotFound />
             </Route>
           </Switch>
-          </Layout>
+        </Layout>
       </AuthProvider>
     </BrowserRouter>
   );

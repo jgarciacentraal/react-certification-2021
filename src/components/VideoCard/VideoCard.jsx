@@ -4,10 +4,8 @@ import { Link } from 'react-router-dom';
 import { Card } from './Styles';
 
 export default function VideoCard({ data, videoList }) {
-  
   const { title, description, thumbnails } = data?.snippet;
   const videoId = data?.id?.videoId;
-
 
   return (
     <>
@@ -18,11 +16,10 @@ export default function VideoCard({ data, videoList }) {
             data: { data, videoList },
           }}
         >
-        <img src={thumbnails.medium.url} alt={title} /> 
-        <h5>{title}</h5>
+          <img src={thumbnails.medium.url} alt={title} />
+          <h5>{title}</h5>
         </Link>
         <p>{description}</p>
-        
       </Card>
     </>
   );
