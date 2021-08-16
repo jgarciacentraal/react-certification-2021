@@ -2,25 +2,19 @@ import styled from 'styled-components';
 
 export const Card = styled.div`
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
-  border-radius: 20px;
-  padding: 2em;
-  margin: 2em;
-  :hover {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  height: 330px;
+  width: 330px;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  margin: 10px;
+  padding: 1em;
+  cursor: pointer;
+
+  img {
+    width: 100%;
+    height: 150px;
   }
-`;
-
-export const VideoImagen = styled.img`
-  justify-content: center;
-  width: 100%;
-  height: 60%;
-`;
-
-export const VideoDetails = styled.div`
-  display: flex;
-  flex-direction: column;
-  flex: 2 1 100%;
   h5 {
     font-size: 28px;
     margin: 2px 5px 1px 5px;
@@ -33,6 +27,7 @@ export const VideoDetails = styled.div`
       font-size: 12px;
     }
   }
+
   p {
     font-size: 14px;
     font-family: Arial, Helvetica, sans-serif;

@@ -1,18 +1,19 @@
 import styled from 'styled-components';
 
-export const HomeContent = styled.div`
-  /* display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  grid-auto-rows: minmax(100px, auto); */
-  display: grid;
-  flex-wrap: wrap;
+export const Title = styled.div`
+  flex-basis: 100%;
+  text-align: center;
+  h3 {
+    font-size: 2rem;
+    letter-spacing: -2px;
+    margin: 15px 0px 15px 0px;
+  }
 `;
 
 export const VideoContent = styled.div`
-  /* display: flex;
-  flex-wrap: wrap; */
-  margin: 0 auto;
-  padding: 20px;
-  width: 400px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
 `;

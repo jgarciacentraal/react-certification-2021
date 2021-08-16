@@ -2,29 +2,38 @@ import React from 'react';
 // Styles
 import './Home.styles.css';
 // Styled components
-import { HomeContent } from './Styles';
+import { VideoContent, Title } from './Styles';
 // Componentes
-import ListVideos from '../../components/ListVideos';
-// own hooks
-import { useFetch } from '../../utils/hooks/useFetch';
+import VideoCard from '../../components/VideoCard';
 
-export default function HomePage() {
-  const { videos, loading, error } = useFetch('wizeline', true);
 
-  
+export default function HomePage({ data }) {
+  console.log('data home page', data);
+  const {videos, loading, error} = data;
+
+
   if (error) return <div>Network error</div>;
+  if (loading) return <div>loading...</div>;
 
   return (
     <>
-      <HomeContent>
-        <h3>Welcome to Wizeline</h3>
+      <section>
+        <Title>
+          <h3>Welcome to Wizeline</h3>
+        </Title>
+        <VideoContent>
+        {videos?.items &&
+          videos.items.map(item => (
+          <VideoCard 
+            key={item.etag} 
+            data={item} 
+            videoList={videos} 
+          />
+        ))}
+        </VideoContent>
+
         
-       
-          <ListVideos data={{ videos, loading, error }} />
-        
-        
-        
-      </HomeContent>
+      </section>
     </>
   );
 }

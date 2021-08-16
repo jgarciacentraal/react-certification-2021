@@ -10,7 +10,7 @@ export const useFetch = (param, fetching) => {
     if (fetching) {
       try {
         const response = await fetch(
-          `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=15&q=${param}&type=video&key=${process.env.REACT_APP_API_KEY}`,
+          `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${param}&type=video&key=${process.env.REACT_APP_API_KEY}`,
           {
             method: 'get',
             headers: { 'Content-Type': 'application/json' },
