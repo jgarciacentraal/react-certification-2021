@@ -24,7 +24,7 @@ export function globalReducer(state, action) {
       return { ...state, videoSelected: action.videoSelected };
     }
 
-    //TODO videos request  i need a dispatch
+    // TODO videos request  i need a dispatch
     case GLOBAL_ACTIONS.GET_VIDEOS_REQUEST: {
       return { ...state, fetchingVideo: true };
     }

@@ -1,4 +1,4 @@
-import {mockVideos} from '../mockData'
+import { mockVideos } from '../mockData';
 
 export const GLOBAL_ACTIONS = {
   SWITCH_THEME: 'SWITCH_THEME',
@@ -34,11 +34,11 @@ export const fetchVideos = async (dispatch, searchValue, select) => {
     //     headers: { 'Content-Type': 'application/json' },
     //   }
     // );
-    //const videoList = await response.json();
+    // const videoList = await response.json();
     const videoList = mockVideos;
     console.log('FETCHING');
     dispatch({ type: GLOBAL_ACTIONS.GET_VIDEOS_SUCCESS, videoList });
-    
+
     if (select) {
       const videoSelected = videoList.items[0];
       dispatch({ type: GLOBAL_ACTIONS.SELECT_VIDEO, videoSelected });
