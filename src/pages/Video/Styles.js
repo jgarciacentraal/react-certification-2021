@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const VideoRow = styled.div`
   display: flex;
   width: 100%;
-  background-color: yellow;
+  //background-color: yellow;
   padding: 2em;
 `;
 

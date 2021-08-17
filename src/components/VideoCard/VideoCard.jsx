@@ -2,10 +2,19 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { Card } from './Styles';
+import { selectVideo } from '../../store/globalActions';
+import { useGlobalProvider } from '../../store/global.provider';
 
-export default function VideoCard({ data, videoList }) {
+
+export default function VideoCard({ data }) {
   const { title, description, thumbnails } = data?.snippet;
   const videoId = data?.id?.videoId;
+
+  const { dispatch } = useGlobalProvider();
+
+  const selectingVideo = () => {
+    selectVideo(dispatch, data);
+  };
 
   return (
     <>
@@ -13,8 +22,8 @@ export default function VideoCard({ data, videoList }) {
         <Link
           to={{
             pathname: `/video/${videoId}`,
-            data: { data, videoList },
           }}
+          onClick={selectingVideo}
         >
           <img src={thumbnails.medium.url} alt={title} />
           <h5>{title}</h5>

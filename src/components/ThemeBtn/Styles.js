@@ -1,23 +1,34 @@
 import styled from 'styled-components';
 
-export const ToggleWrapper = styled.div`
-  width: 60px;
-  height: 17px;
-  border: 2px solid #e8eef3;
-  border-radius: 15px;
+export const Button = styled.button`
+  border: 2px solid ${({ theme }) => theme.toggleBorder};
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 0.5rem;
+  justify-content: space-between;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 0px;
   position: relative;
-  display: flex;
-  align-items: center;
-  padding: 5px;
-  transition: background-color 1s, border-width 0.1s;
+  width: 50px;
+  height: 30px;
+  outline: none;
+  background: transparent;
+
+  @media (max-width: 800px) {
+    visibility: hidden;
+    width: 0px;
+  }
 `;
 
-export const ToggleCircle = styled.div`
-  width: 17px;
-  height: 17px;
-  background-color: #e8eef3;
-  border-radius: 50%;
-  transition: 1s;
-  position: relative;
-  left: 0;
+export const Sun = styled.svg`
+  height: 90%;
+  width: auto;
+  transition: all 0.7s linear;
+`;
+
+export const Moon = styled.svg`
+  height: 75%;
+  width: auto;
+  transition: all 0.7s linear;
 `;
