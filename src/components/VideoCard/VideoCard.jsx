@@ -5,7 +5,6 @@ import { Card } from './Styles';
 import { selectVideo } from '../../store/globalActions';
 import { useGlobalProvider } from '../../store/global.provider';
 
-
 export default function VideoCard({ data }) {
   const { title, description, thumbnails } = data?.snippet;
   const videoId = data?.id?.videoId;

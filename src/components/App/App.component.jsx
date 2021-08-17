@@ -12,18 +12,16 @@ import Header from '../Header/Header';
 import Layout from '../Layout';
 import Private from '../Private';
 
-import GlobalStyle from '../../GlobalStyle'
+import GlobalStyle from '../../GlobalStyle';
 
 import { lightTheme, darkTheme } from '../../utils/themes';
 import { useGlobalProvider } from '../../store/global.provider';
-
 
 function App() {
   const {
     state: { themeValue },
   } = useGlobalProvider();
   const themeMode = themeValue === 'light' ? lightTheme : darkTheme;
-  
 
   return (
     <ThemeProvider theme={themeMode}>
@@ -52,7 +50,7 @@ function App() {
           </Layout>
         </AuthProvider>
       </BrowserRouter>
-    <GlobalStyle />
+      <GlobalStyle />
     </ThemeProvider>
   );
 }

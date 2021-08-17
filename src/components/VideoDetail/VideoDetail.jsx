@@ -10,7 +10,6 @@ import {
 
 export default function VideoDetail({ videoSelected, videoId }) {
   const { title, description } = videoSelected.snippet;
-  
 
   return (
     <>

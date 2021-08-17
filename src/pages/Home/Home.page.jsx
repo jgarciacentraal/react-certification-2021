@@ -16,7 +16,6 @@ export default function HomePage() {
   if (error) return <div>Network error</div>;
   if (fetchingVideo) return <div>loading...</div>;
 
-
   return (
     <>
       <section>

@@ -7,13 +7,11 @@ import { fetchVideos, onChangeSearch } from '../../store/globalActions';
 import { useGlobalProvider } from '../../store/global.provider';
 
 export default function Search() {
-  //const [search, setSearch] = useState('')
   const history = useHistory();
   const {
     state: { searchValue },
     dispatch,
   } = useGlobalProvider();
-  
 
   const onHandleSearch = (event) => {
     console.log(event.target.value);
