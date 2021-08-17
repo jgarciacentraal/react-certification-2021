@@ -8,10 +8,9 @@ import {
   VideoiFrame,
 } from './Styles';
 
-export default function VideoDetail({ videoDetail }) {
-  console.log('items', videoDetail);
-  const { videoId } = videoDetail.video.id;
-  const { title, description } = videoDetail.video.snippet;
+export default function VideoDetail({ videoSelected, videoId }) {
+  const { title, description } = videoSelected.snippet;
+  
 
   return (
     <>

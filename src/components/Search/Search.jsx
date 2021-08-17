@@ -1,11 +1,32 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import { SearchContainer, InputText } from './Styles';
 
-export default function Search({ handleSearch }) {
+import { fetchVideos, onChangeSearch } from '../../store/globalActions';
+import { useGlobalProvider } from '../../store/global.provider';
+
+export default function Search() {
+  //const [search, setSearch] = useState('')
+  const history = useHistory();
+  const {
+    state: { searchValue },
+    dispatch,
+  } = useGlobalProvider();
+  
+
   const onHandleSearch = (event) => {
-    handleSearch(event.target.value);
+    console.log(event.target.value);
+    const { value } = event.target;
+    if (event.key === 'Enter') {
+      onChangeSearch(dispatch, value);
+      history.push('/');
+    }
   };
+
+  useEffect(() => {
+    fetchVideos(dispatch, searchValue, false);
+  }, [dispatch, searchValue]);
 
   return (
     <SearchContainer>
