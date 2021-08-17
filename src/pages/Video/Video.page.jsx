@@ -22,7 +22,7 @@ export default function Video() {
     if (!videoList?.items) {
       fetchVideos(dispatch, matchParams.id, true);
     }
-  }, []);
+  });
 
   if (!videoSelected) return <>Loading...</>;
   return (
