@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 
@@ -11,13 +11,17 @@ import SecretPage from '../../pages/Secret';
 import Header from '../Header/Header';
 import Layout from '../Layout';
 import Private from '../Private';
+import SideBar from 'components/SideBar/SideBar'
 
 import GlobalStyle from '../../GlobalStyle';
+
 
 import { lightTheme, darkTheme } from '../../utils/themes';
 import { useGlobalProvider } from '../../store/global.provider';
 
+
 function App() {
+  const [openSideBar, setOpenSideBar] = useState(false);
   const {
     state: { themeValue },
   } = useGlobalProvider();
@@ -29,7 +33,8 @@ function App() {
       <BrowserRouter>
         <AuthProvider>
           <Layout>
-            <Header />
+            <Header toggleSideBar={setOpenSideBar} />
+            <SideBar open={openSideBar} toggleSideBar={setOpenSideBar} />
             <Switch>
               <Route exact path="/">
                 <HomePage />

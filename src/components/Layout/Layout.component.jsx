@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-
 import './Layout.styles.css';
 
 const MainDiv = styled.main`
@@ -9,7 +8,15 @@ const MainDiv = styled.main`
 `;
 
 function Layout({ children }) {
-  return <MainDiv>{children}</MainDiv>;
+  
+  return (
+    <MainDiv>
+      
+      {children}
+      
+    </MainDiv>
+  )
+  ;
 }
 
 export default Layout;

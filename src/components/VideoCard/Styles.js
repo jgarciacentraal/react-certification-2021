@@ -16,7 +16,7 @@ export const Card = styled.div`
     height: 150px;
   }
   h5 {
-    font-size: 28px;
+    font-size: 18px;
     margin: 2px 5px 1px 5px;
     padding: 0px;
     font-family: Arial, Helvetica, sans-serif;
@@ -29,7 +29,7 @@ export const Card = styled.div`
   }
 
   p {
-    font-size: 14px;
+    font-size: 12px;
     font-family: Arial, Helvetica, sans-serif;
     color: #a5a18f;
     margin: 0px 0px 5px 5px;
