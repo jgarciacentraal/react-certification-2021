@@ -4,13 +4,14 @@ export const VideoRow = styled.div`
   display: flex;
   width: 100%;
   //background-color: yellow;
-  padding: 2em;
+  height: 100%;
+  flex-direction: row;
 `;
 
 export const VideoColumn = styled.div`
-  width: 100%;
-`;
-
-export const ListRow = styled.div`
-  width: 500px;
+  width: 70%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
 `;

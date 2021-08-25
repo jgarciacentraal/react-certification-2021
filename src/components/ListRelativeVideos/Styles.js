@@ -1,20 +1,40 @@
 import styled from 'styled-components';
 
 export const ListContainer = styled.div`
+  /* display: flex;
+  flex-direction: column; */
+  width: 30%;
+  height: 100%;
+  overflow: scroll;
+`;
+
+export const ListVideoItem = styled.button`
+  width: 100%;
+  height: 100px;
+  position: relative;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  border: none;
+  color: inherit;
+  background: inherit;
+  text-align: inherit;
+  overflow: hidden;
+
+  & :hover {
+    cursor: pointer;
+  }
 `;
 
 export const ListImg = styled.img`
-  justify-content: center;
-  width: 100px;
-  height: 60px;
+  width: 120px;
+  height: 90px;
 `;
 
 export const ListDetail = styled.div`
-  display: flex;
-  flex-direction: column;
-  flex: 2 1 100%;
+  height: 100%;
+  //flex-grow: 1;
+  padding: 5px;
+  box-sizing: border-box;
   h5 {
     font-size: 14px;
     margin: 2px 5px 1px 5px;

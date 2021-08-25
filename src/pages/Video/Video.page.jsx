@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { VideoRow, VideoColumn, ListRow } from './Styles';
+import { VideoRow, VideoColumn } from './Styles';
 
 import VideoDetail from '../../components/VideoDetail/VideoDetail';
+import List from 'components/ListRelativeVideos/List';
 
 import { useGlobalProvider } from '../../store/global.provider';
 import { fetchVideos } from '../../store/globalActions';
@@ -26,13 +27,15 @@ export default function Video() {
 
   if (!videoSelected) return <>Loading...</>;
   return (
-    <>
+    
       <VideoRow>
         <VideoColumn>
           <VideoDetail videoSelected={videoSelected} videoId={videoId} />
         </VideoColumn>
-        <ListRow>{/* <List items={items} /> */}</ListRow>
+        
+        <List videos={videoList} />
+        
       </VideoRow>
-    </>
+    
   );
 }

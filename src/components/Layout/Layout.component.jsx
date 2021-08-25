@@ -8,15 +8,7 @@ const MainDiv = styled.main`
 `;
 
 function Layout({ children }) {
-  
-  return (
-    <MainDiv>
-      
-      {children}
-      
-    </MainDiv>
-  )
-  ;
+  return <MainDiv>{children}</MainDiv>;
 }
 
 export default Layout;
