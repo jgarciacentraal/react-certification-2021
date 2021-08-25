@@ -8,6 +8,7 @@ import VideoCard from '../../components/VideoCard';
 
 import { useGlobalProvider } from '../../store/global.provider';
 
+
 export default function HomePage() {
   const {
     state: { fetchingVideo, videoList, error },
@@ -19,6 +20,7 @@ export default function HomePage() {
   return (
     <>
       <section>
+        
         <Title>
           <h3>Welcome to Wizeline</h3>
         </Title>

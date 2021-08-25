@@ -14,7 +14,7 @@ export const ButtonLgn = styled.button`
   height: 50%;
   outline: none;
   background: #e8eef3;
-  color: ${({ theme }) => theme.text};
+  //color: ${({ theme }) => theme.text};
 
   @media (max-width: 800px) {
     width: 60px;

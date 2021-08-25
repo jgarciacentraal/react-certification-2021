@@ -7,7 +7,7 @@ export const initialState = {
   videoList: [],
   error: false,
 
-  searchValue: 'Wizeline',
+  searchValue: 'islas cock',
   themeValue: localTheme || 'light',
   videoSelected: null,
 };
