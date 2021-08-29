@@ -54,7 +54,7 @@ export default function LoginBtn() {
         aria-haspopup="true"
         color="inherit"
         onClick={handleMenu}
-        style={{marginRight:"20px"}}
+        style={{ marginRight: '20px' }}
       >
         <Avatar src={user?.avatarUrl || null} alt="Avatar" />
       </IconButton>
