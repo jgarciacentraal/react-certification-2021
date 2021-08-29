@@ -12,11 +12,6 @@ export const HeaderContainer = styled.nav`
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
   display: flex;
   align-items: center;
-  .nav {
-    margin: 30px;
-    display: flex;
-    justify-content: space-between;
-  }
 `;
 
 export const ToggleMenu = styled.div`

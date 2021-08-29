@@ -6,10 +6,10 @@ import './global.css';
 import GlobalProvider from './store/global.provider';
 
 ReactDOM.render(
-  <React.StrictMode>
+  
     <GlobalProvider>
       <App />
-    </GlobalProvider>
-  </React.StrictMode>,
+    </GlobalProvider>,
+  
   document.getElementById('root')
 );

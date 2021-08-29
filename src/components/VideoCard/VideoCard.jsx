@@ -1,19 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 import { Card } from './Styles';
 import { selectVideo } from '../../store/globalActions';
 import { useGlobalProvider } from '../../store/global.provider';
 
 export default function VideoCard({ data }) {
-  const { title, description, thumbnails } = data?.snippet;
-  const videoId = data?.id?.videoId;
-
+  const { title, description, url, videoId } = data;
   const { dispatch } = useGlobalProvider();
 
   const selectingVideo = () => {
     selectVideo(dispatch, data);
   };
+  
 
   return (
     <>
@@ -24,10 +22,11 @@ export default function VideoCard({ data }) {
           }}
           onClick={selectingVideo}
         >
-          <img src={thumbnails.medium.url} alt={title} />
+          <img src={url} alt={title} />
           <h5>{title}</h5>
         </Link>
         <p>{description}</p>
+        
       </Card>
     </>
   );

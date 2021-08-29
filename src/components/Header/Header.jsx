@@ -10,14 +10,12 @@ export default function Header({ toggleSideBar }) {
   return (
     <>
       <HeaderContainer data-testid="header-container">
-          <ToggleMenu onClick={() => toggleSideBar(true)}>
-            <Menu />
-          </ToggleMenu>
+        <ToggleMenu onClick={() => toggleSideBar(true)}>
+          <Menu />
+        </ToggleMenu>
         <Search />
-        <div className="nav">
           <ThemeBtn />
           <LoginBtn />
-        </div>
       </HeaderContainer>
       {/* <SideBar setSidebar={setSidebar} sidebar={sidebar} /> */}
     </>
