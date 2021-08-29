@@ -7,44 +7,42 @@ import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 
+import { SideBarContainer } from './Styles';
 
-import { SideBarContainer} from './Styles';
-
+import { useGlobalProvider } from 'store/global.provider';
 
 export default function SideBar({ toggleSideBar, open }) {
   const { push } = useHistory();
+
+  //TODO si Esta logeado el usario mostrar Favorites
+  /* por ahora valido con FavoritosList de context  */
+
+  const { state: { user } } = useGlobalProvider();
+    
+  const isLoggedIn = Boolean(user);
+
   const handleClose = () => {
     toggleSideBar(false);
-  }
-
+  };
 
   return (
-    <Drawer 
-      open={open} 
-      onClose={handleClose}
-    >
-      <SideBarContainer
-          onClick={() => toggleSideBar(false)}
-      >
+    <Drawer open={open} onClose={handleClose}>
+      <SideBarContainer onClick={() => toggleSideBar(false)}>
         <List>
           <ListItem button onClick={() => push('/')}>
             <ListItemText primary="Home" />
           </ListItem>
           <Divider />
-          {/* {isLoggedIn && (
+          {isLoggedIn && (
             <>
               <ListItem button onClick={() => push('/favorites')}>
                 <ListItemText primary="Favorites" />
               </ListItem>
               <Divider />
             </>
-          )} */}
+          )}
         </List>
-  
       </SideBarContainer>
-
     </Drawer>
-
-  )
-
+  );
 }

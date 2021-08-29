@@ -23,3 +23,16 @@ export const VideoiFrame = styled.iframe`
   width: 100%;
   height: 600px;
 `;
+
+export const Button = styled.button`
+  text-decoration: none;
+  border: none;
+  padding: 10px 10px;
+  display: inline-block;
+  cursor: pointer;
+  width: auto;
+  margin: 10px;
+  background-color: #2b5876;
+  color: white;
+  border-radius: 8px;
+`;
