@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import IconButton from '@material-ui/core/IconButton';
 import Avatar from '@material-ui/core/Avatar';
@@ -17,10 +17,12 @@ const ANCHOR_ORIGIN = {
   horizontal: 'right',
 };
 
-
 export default function LoginBtn() {
   const history = useHistory();
-  const { state: { user }, dispatch } = useGlobalProvider();
+  const {
+    state: { user },
+    dispatch,
+  } = useGlobalProvider();
   const isLoggedIn = Boolean(user);
   const [anchorElement, setAnchorElement] = useState(null);
   const open = Boolean(anchorElement);
@@ -34,13 +36,12 @@ export default function LoginBtn() {
   }
 
   function doLogin() {
-    showModal(dispatch, true)
-    history.push("/login");
+    showModal(dispatch, true);
+    history.push('/login');
   }
 
-
   function doLogout() {
-    //mandar logout
+    // mandar logout
     logOut(dispatch);
     handleMenuItemClose();
   }
@@ -53,6 +54,7 @@ export default function LoginBtn() {
         aria-haspopup="true"
         color="inherit"
         onClick={handleMenu}
+        style={{marginRight:"20px"}}
       >
         <Avatar src={user?.avatarUrl || null} alt="Avatar" />
       </IconButton>

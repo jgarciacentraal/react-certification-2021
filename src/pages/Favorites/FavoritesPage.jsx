@@ -1,14 +1,11 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import VideoCard from 'components/VideoCard/VideoCard';
 
-import {SectionAlert, Section} from './Styles';
-
 import { useGlobalProvider } from 'store/global.provider';
-import { Fragment } from 'react';
+import { SectionAlert, Section } from './Styles';
 
 export default function FavoritesPage() {
-
   const {
     state: { favoriteVideos },
   } = useGlobalProvider();
@@ -20,20 +17,16 @@ export default function FavoritesPage() {
       </SectionAlert>
     );
   }
-  
+
   return (
     <Section>
       {favoriteVideos.map((video) => {
         return (
           <Fragment key={video.videoId}>
-              <VideoCard
-                data={{ ...video, favoriteVideos }}
-              />
+            <VideoCard data={{ ...video, favoriteVideos }} />
           </Fragment>
         );
       })}
     </Section>
-  )
+  );
 }
-
-

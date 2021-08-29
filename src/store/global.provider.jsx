@@ -17,7 +17,7 @@ const useGlobalProvider = () => {
 function UserInit(state) {
   return {
     ...state,
-    user: window.localStorage.getItem(AUTH_STORAGE_KEY)
+    user: window.localStorage.getItem(AUTH_STORAGE_KEY),
   };
 }
 
@@ -30,14 +30,13 @@ function GlobalProvider({ children }) {
     window.localStorage.setItem(THEME_STORAGE, themeValue);
   }, [themeValue]);
 
-  //TODO
+  // TODO
   /* Checar como guardar usuario que me devuelve la api.... action y reducer OJO al master
 
   1. Checar user a la hora de hacer login..
   2. nose jaja checar funcionamiento de  las rutas privadas de acuerdo a user autenticado
    en vez de por ruta de favoritos que es como esta ahorita
   */
-
 
   useEffect(() => {
     if (state.user) {
@@ -47,12 +46,9 @@ function GlobalProvider({ children }) {
     }
   }, [state.user]);
 
-  
-
   useEffect(() => {
     window.localStorage.setItem(VIDEOS_STORAGE, JSON.stringify(favoriteVideos));
   }, [favoriteVideos]);
-
 
   return (
     <GlobalContext.Provider value={{ state, dispatch }}>

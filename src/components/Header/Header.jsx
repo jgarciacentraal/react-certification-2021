@@ -14,8 +14,8 @@ export default function Header({ toggleSideBar }) {
           <Menu />
         </ToggleMenu>
         <Search />
-          <ThemeBtn />
-          <LoginBtn />
+        <ThemeBtn />
+        <LoginBtn />
       </HeaderContainer>
       {/* <SideBar setSidebar={setSidebar} sidebar={sidebar} /> */}
     </>

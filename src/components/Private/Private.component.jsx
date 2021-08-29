@@ -8,9 +8,7 @@ function Private({ children, ...rest }) {
     state: { user },
   } = useGlobalProvider();
 
-  return (
-    <Route {...rest} render={() => (user ? children : <Redirect to="/" />)} />
-  );
+  return <Route {...rest} render={() => (user ? children : <Redirect to="/" />)} />;
 }
 
 export default Private;

@@ -11,7 +11,6 @@ export default function VideoCard({ data }) {
   const selectingVideo = () => {
     selectVideo(dispatch, data);
   };
-  
 
   return (
     <>
@@ -26,7 +25,6 @@ export default function VideoCard({ data }) {
           <h5>{title}</h5>
         </Link>
         <p>{description}</p>
-        
       </Card>
     </>
   );

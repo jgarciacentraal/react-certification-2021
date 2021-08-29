@@ -8,7 +8,7 @@ const favorites = window.localStorage.getItem(VIDEOS_STORAGE)
   ? JSON.parse(window.localStorage.getItem(VIDEOS_STORAGE))
   : [];
 
-//const localTheme = window.localStorage.getItem('theme');
+// const localTheme = window.localStorage.getItem('theme');
 
 export const initialState = {
   fetchingVideo: false,
@@ -65,12 +65,12 @@ export function globalReducer(state, action) {
 
     case GLOBAL_ACTIONS.ADD_FAVORITE_VIDEO:
       return { ...state, favoriteVideos: action.favoriteVideos };
-      
+
     case GLOBAL_ACTIONS.REMOVE_FAVORITE_VIDEO:
       return { ...state, favoriteVideos: action.favoriteVideos };
 
     case GLOBAL_ACTIONS.SHOW_MODAL:
-        return { ...state, showModalLogin: action.showModalLogin };
+      return { ...state, showModalLogin: action.showModalLogin };
     default:
       throw new Error('Unkown action');
   }
