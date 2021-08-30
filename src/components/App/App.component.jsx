@@ -4,7 +4,7 @@ import { ThemeProvider } from 'styled-components';
 
 import SideBar from 'components/SideBar/SideBar';
 import FavoritesPage from 'pages/Favorites/FavoritesPage';
-import FavoriteVideo from 'pages/FavoriteVideo';
+import FavoriteVideoPage from 'pages/FavoriteVideo';
 import HomePage from '../../pages/Home';
 import VideoPage from '../../pages/Video';
 import LoginPage from '../../pages/Login';
@@ -37,7 +37,7 @@ export default function App() {
             <Route exact path="/video/:id" component={VideoPage} />
             <Route exact path="/login" component={LoginPage} />
             <Private exact path="/favorites" component={FavoritesPage} />
-            <Private path="/favorites/:videoId" component={FavoriteVideo} />
+            <Private path="/favorites/:videoId" component={FavoriteVideoPage} />
             <Route path="*" component={NotFound} />
           </Switch>
         </Layout>

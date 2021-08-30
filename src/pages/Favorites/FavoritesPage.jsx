@@ -1,15 +1,13 @@
 import React, { Fragment } from 'react';
-
 import VideoCard from 'components/VideoCard/VideoCard';
 
 import { useGlobalProvider } from 'store/global.provider';
 import { SectionAlert, Section } from './Styles';
 
 export default function FavoritesPage() {
-  const {
-    state: { favoriteVideos },
-  } = useGlobalProvider();
-
+  
+  const { state: { favoriteVideos } } = useGlobalProvider();
+    
   if (favoriteVideos.length === 0) {
     return (
       <SectionAlert>

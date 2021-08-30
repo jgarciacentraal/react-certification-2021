@@ -12,14 +12,8 @@ import { SideBarContainer } from './Styles';
 
 export default function SideBar({ toggleSideBar, open }) {
   const { push } = useHistory();
-
-  // TODO si Esta logeado el usario mostrar Favorites
-  /* por ahora valido con FavoritosList de context  */
-
-  const {
-    state: { user },
-  } = useGlobalProvider();
-
+  const { state: { user } } = useGlobalProvider();
+   
   const isLoggedIn = Boolean(user);
 
   const handleClose = () => {
@@ -27,11 +21,11 @@ export default function SideBar({ toggleSideBar, open }) {
   };
 
   return (
-    <Drawer open={open} onClose={handleClose}>
+    <Drawer open={open} onClose={handleClose} data-testid="sidebar-role">
       <SideBarContainer onClick={() => toggleSideBar(false)}>
         <List>
           <ListItem button onClick={() => push('/')}>
-            <ListItemText primary="Home" />
+            <ListItemText data-testid="btn-home" primary="Home" />
           </ListItem>
           <Divider />
           {isLoggedIn && (

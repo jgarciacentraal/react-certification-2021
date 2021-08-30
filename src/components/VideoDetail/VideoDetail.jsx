@@ -13,22 +13,17 @@ import {
 
 export default function VideoDetail(props) {
   const {
-    state: { favoriteVideos },
+    state: { favoriteVideos, user },
     dispatch,
   } = useGlobalProvider();
   const { title, description, videoId, url } = props?.video?.videoSelected;
   const { favorite } = props?.video;
 
-  // TODO videos agregados a Favorites Pages (Sidebar  Habilitar Navegacion a Favoritos )
-
-  /* Funciona agregar videos al storage, falta remove 
-    -> Funcionan ambas nomas checar bien que pedo
-  */
   const addFavorite = (newVideo) => {
     const newFavorites = [...favoriteVideos, newVideo];
     addVideo(dispatch, newFavorites);
   };
-  // pasaba videoId como param, quite para pasar el commit
+  
   const removeFavorite = () => {
     const newFavorites = favoriteVideos.filter((video) => video.videoId !== videoId);
     removeVideo(dispatch, newFavorites);
@@ -47,7 +42,12 @@ export default function VideoDetail(props) {
         <VideoInfoContainer>
           <VideoTitle data-testid={title}>{title}</VideoTitle>
           <VideoText>{description}</VideoText>
-          <Button onClick={() => favoriteHandler()}>{favorite ? 'Remove' : 'Add'}</Button>
+           
+          {user && 
+            <Button onClick={() => favoriteHandler()}>
+              {favorite ? 'Remove' : 'Add'}
+            </Button>}
+  
         </VideoInfoContainer>
       </VideoContainer>
     </>

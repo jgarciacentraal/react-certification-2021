@@ -23,7 +23,7 @@ export default function LoginBtn() {
     state: { user },
     dispatch,
   } = useGlobalProvider();
-  const isLoggedIn = Boolean(user);
+
   const [anchorElement, setAnchorElement] = useState(null);
   const open = Boolean(anchorElement);
 
@@ -44,11 +44,13 @@ export default function LoginBtn() {
     // mandar logout
     logOut(dispatch);
     handleMenuItemClose();
+    history.push('/');
   }
 
   return (
     <>
       <IconButton
+        data-testid="btn-test"
         edge="end"
         aria-label="User profile dropdown"
         aria-haspopup="true"
@@ -67,7 +69,7 @@ export default function LoginBtn() {
         open={open}
         onClose={handleMenuItemClose}
       >
-        {isLoggedIn ? (
+        {user ? (
           <MenuItem onClick={doLogout}>Logout</MenuItem>
         ) : (
           <MenuItem onClick={doLogin}>Login</MenuItem>

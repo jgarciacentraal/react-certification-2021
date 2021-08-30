@@ -1,17 +1,12 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-
-// Components
-import List from 'components/ListRelativeVideos/List';
 import { useIsFavorite } from 'utils/hooks/useIsFavorite';
-import VideoDetail from '../../components/VideoDetail/VideoDetail';
-// Ows Styles
 import { VideoRow, VideoColumn } from './Styles';
-// Context
 import { useGlobalProvider } from '../../store/global.provider';
-// Actions
 import { fetchVideos } from '../../store/globalActions';
-// Own hooks
+import VideoDetail from '../../components/VideoDetail/VideoDetail';
+import List from 'components/ListRelativeVideos/List';
+
 
 export default function Video() {
   const matchParams = useParams();

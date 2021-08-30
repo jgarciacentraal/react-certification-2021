@@ -15,7 +15,6 @@ export default function List(props) {
   const { dispatch } = useGlobalProvider();
 
   const onSelectVideo = (videoSelected) => {
-    console.log('videoSelected', videoSelected);
     selectVideo(dispatch, videoSelected);
   };
 
