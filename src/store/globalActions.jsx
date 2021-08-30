@@ -61,7 +61,6 @@ export const fetchVideos = async (dispatch, searchValue, select) => {
   }
 };
 
-
 export const showModal = (dispatch, showModalLogin) => {
   dispatch({ type: GLOBAL_ACTIONS.SHOW_MODAL, showModalLogin });
 };

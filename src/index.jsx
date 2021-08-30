@@ -6,10 +6,9 @@ import './global.css';
 import GlobalProvider from './store/global.provider';
 
 ReactDOM.render(
-  
-    <GlobalProvider>
-      <App />
-    </GlobalProvider>,
-  
+  <GlobalProvider>
+    <App />
+  </GlobalProvider>,
+
   document.getElementById('root')
 );

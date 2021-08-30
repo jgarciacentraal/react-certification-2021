@@ -1,1 +1,1 @@
-export { default } from './FavoriteVideo';
+export { default } from './FavoriteVideoPage';

@@ -1,16 +1,16 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
+import { useGlobalProvider } from 'store/global.provider';
 
-import { useGlobalProvider } from '../../store/global.provider';
+export default function Private(props) {
+  
+  const { state: { user } } = useGlobalProvider();
 
-function Private({ children, ...rest }) {
-  const {
-    state: { user },
-  } = useGlobalProvider();
-
-  return (
-    <Route {...rest} render={() => (user ? children : <Redirect to="/" />)} />
+  return user ? (
+    <Route {...props} />
+  ) : (
+    <Redirect to={{ pathname: '/' }} />
   );
 }
 
-export default Private;
+

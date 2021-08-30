@@ -12,6 +12,9 @@ export const HeaderContainer = styled.nav`
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
   display: flex;
   align-items: center;
+  nav {
+    margin-left: 5px;
+  }
 `;
 
 export const ToggleMenu = styled.div`
@@ -20,7 +23,7 @@ export const ToggleMenu = styled.div`
   color: white;
   margin: 20px;
   padding: 3px;
-  border-radius: 5px;
-  border-style: solid;
+  border-style: hidden;
   border-color: white;
+  cursor: pointer;
 `;
