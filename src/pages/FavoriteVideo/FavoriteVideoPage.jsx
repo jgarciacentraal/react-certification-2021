@@ -1,15 +1,20 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Divider from '@material-ui/core/Divider';
-//import estilos de VideoPage
-import {VideoRow, VideoColumn} from 'pages/Video/Styles';
-import { ListContainer, ListVideoItem, ListImg, ListDetail } from 'components/ListRelativeVideos/Styles';
-import VideoDetail from '../../components/VideoDetail/VideoDetail';
+// import estilos de VideoPage
+import { VideoRow, VideoColumn } from 'pages/Video/Styles';
+import {
+  ListContainer,
+  ListVideoItem,
+  ListImg,
+  ListDetail,
+} from 'components/ListRelativeVideos/Styles';
 
 import { useIsFavorite } from 'utils/hooks/useIsFavorite';
-import { fetchVideos } from '../../store/globalActions';
 import { useGlobalProvider } from 'store/global.provider';
 import { selectVideo } from 'store/globalActions';
+import { fetchVideos } from '../../store/globalActions';
+import VideoDetail from '../../components/VideoDetail/VideoDetail';
 
 export default function FavoriteVideo() {
   const matchParams = useParams();
@@ -18,7 +23,6 @@ export default function FavoriteVideo() {
     state: { videoList, videoSelected, favoriteVideos, user },
     dispatch,
   } = useGlobalProvider();
-
 
   const favorite = useIsFavorite(matchParams.id, favoriteVideos, user);
 
@@ -69,7 +73,7 @@ export default function FavoriteVideo() {
               </Link>
             );
           })}
-      </ListContainer>    
+      </ListContainer>
     </VideoRow>
-  )
+  );
 }

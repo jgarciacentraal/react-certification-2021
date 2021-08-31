@@ -1,4 +1,4 @@
-import { mockVideos } from '../mockData';
+//import { mockVideos } from '../mockData';
 
 import loginApi from '../service/login.api';
 
@@ -40,15 +40,15 @@ export const selectVideo = (dispatch, videoSelected) => {
 export const fetchVideos = async (dispatch, searchValue, select) => {
   dispatch({ type: GLOBAL_ACTIONS.GET_VIDEOS_REQUEST, searchValue });
   try {
-    // const response = await fetch(
-    //   `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${searchValue}&type=video&key=${process.env.REACT_APP_API_KEY}`,
-    //   {
-    //     method: 'get',
-    //     headers: { 'Content-Type': 'application/json' },
-    //   }
-    // );
-    // const videoList = await response.json();
-    const videoList = mockVideos;
+    const response = await fetch(
+      `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${searchValue}&type=video&key=${process.env.REACT_APP_API_KEY}`,
+      {
+        method: 'get',
+        headers: { 'Content-Type': 'application/json' },
+      }
+    );
+    const videoList = await response.json();
+    //const videoList = mockVideos;
     console.log('getting data...');
     dispatch({ type: GLOBAL_ACTIONS.GET_VIDEOS_SUCCESS, videoList });
 

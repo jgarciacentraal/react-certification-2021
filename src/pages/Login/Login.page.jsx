@@ -8,7 +8,7 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
-import { LoginPromptTextField, Background, ErrorBox } from './Styles';
+import { LoginPromptTextField, ErrorBox } from './Styles';
 
 import { useGlobalProvider } from '../../store/global.provider';
 import { loginUser, showModal } from '../../store/globalActions';
@@ -24,12 +24,12 @@ export default function LoginPage() {
     dispatch,
   } = useGlobalProvider();
 
+
   const close = () => {
     showModal(dispatch, false);
     history.push('/');
   };
 
-  // TODO usuario correcto mostrar avatar y seccion de agregar favoritos
   const handleLogin = async () => {
     const user = await loginUser(dispatch, username, password);
 
@@ -39,19 +39,20 @@ export default function LoginPage() {
   };
 
   return ReactDom.createPortal(
-    <Background>
+    <>
       <Dialog
         open={showModalLogin}
         onClose={close}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
+        data-testid="login-test-dialog"
       >
         <DialogTitle id="alert-dialog-title">Login</DialogTitle>
         <DialogContent>
           <LoginPromptTextField
             label="Username"
             id="username"
-            placeholder="wizeline@wizeline.com"
+            placeholder="wizeline"
             onChange={(e) => setUsername(e.target.value)}
             fullWidth
           />
@@ -79,7 +80,7 @@ export default function LoginPage() {
           </ErrorBox>
         )}
       </Dialog>
-    </Background>,
+    </>,
     document.getElementById('modal')
   );
 }

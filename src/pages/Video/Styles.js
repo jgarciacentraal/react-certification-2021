@@ -6,6 +6,10 @@ export const VideoRow = styled.div`
   //background-color: yellow;
   height: 100%;
   flex-direction: row;
+
+  @media (max-width: 1100px) {
+    flex-direction: column;
+  }
 `;
 
 export const VideoColumn = styled.div`
@@ -14,4 +18,7 @@ export const VideoColumn = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
+  @media (max-width: 1100px) {
+    width: 100%;
+  }
 `;

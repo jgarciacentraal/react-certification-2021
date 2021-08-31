@@ -5,9 +5,10 @@ import { useGlobalProvider } from 'store/global.provider';
 import { SectionAlert, Section } from './Styles';
 
 export default function FavoritesPage() {
-  
-  const { state: { favoriteVideos } } = useGlobalProvider();
-    
+  const {
+    state: { favoriteVideos },
+  } = useGlobalProvider();
+
   if (favoriteVideos.length === 0) {
     return (
       <SectionAlert>
@@ -17,7 +18,7 @@ export default function FavoritesPage() {
   }
 
   return (
-    <Section>
+    <Section data-testid="section-favorites">
       {favoriteVideos.map((video) => {
         return (
           <Fragment key={video.videoId}>

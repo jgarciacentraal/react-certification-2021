@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useIsFavorite } from 'utils/hooks/useIsFavorite';
+import List from 'components/ListRelativeVideos/List';
 import { VideoRow, VideoColumn } from './Styles';
 import { useGlobalProvider } from '../../store/global.provider';
 import { fetchVideos } from '../../store/globalActions';
 import VideoDetail from '../../components/VideoDetail/VideoDetail';
-import List from 'components/ListRelativeVideos/List';
-
 
 export default function Video() {
   const matchParams = useParams();
@@ -29,6 +28,7 @@ export default function Video() {
 
   if (!videoSelected) return <>Loading...</>;
   return (
+    <>
     <VideoRow>
       <VideoColumn>
         <VideoDetail
@@ -39,7 +39,10 @@ export default function Video() {
           }}
         />
       </VideoColumn>
+      
       <List videoId={id} />
+      
     </VideoRow>
+    </>
   );
 }
