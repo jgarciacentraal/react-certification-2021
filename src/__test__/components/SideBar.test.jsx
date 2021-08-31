@@ -17,15 +17,16 @@ test('Test sidebar component', () => {
     );
   };
 
-  const openSideBar = true
-  const setOpenSideBar = jest.fn()
+  const openSideBar = true;
+  const setOpenSideBar = jest.fn();
 
-  render(<SideBar open={openSideBar} toggleSideBar={setOpenSideBar} />, { wrapper: allProviders })
+  render(<SideBar open={openSideBar} toggleSideBar={setOpenSideBar} />, {
+    wrapper: allProviders,
+  });
 
-  const drawerElement = screen.getByTestId('sidebar-role')
-  expect(drawerElement).toBeInTheDocument() 
+  const drawerElement = screen.getByTestId('sidebar-role');
+  expect(drawerElement).toBeInTheDocument();
 
   const homeSection = screen.getByTestId('btn-home');
   expect(homeSection).toBeInTheDocument();
-  
-})
+});

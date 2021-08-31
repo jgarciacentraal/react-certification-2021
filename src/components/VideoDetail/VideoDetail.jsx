@@ -23,7 +23,7 @@ export default function VideoDetail(props) {
     const newFavorites = [...favoriteVideos, newVideo];
     addVideo(dispatch, newFavorites);
   };
-  
+
   const removeFavorite = () => {
     const newFavorites = favoriteVideos.filter((video) => video.videoId !== videoId);
     removeVideo(dispatch, newFavorites);
@@ -40,14 +40,14 @@ export default function VideoDetail(props) {
       <VideoContainer>
         <VideoiFrame title="playVideo" src={`https://www.youtube.com/embed/${videoId}`} />
         <VideoInfoContainer>
-          <VideoTitle data-testid={title}>{title}</VideoTitle>
-          <VideoText>{description}</VideoText>
-           
-          {user && 
+          <VideoTitle data-testid="title-detail">{title}</VideoTitle>
+          <VideoText data-testid="descrpition-detail">{description}</VideoText>
+
+          {user && (
             <Button onClick={() => favoriteHandler()}>
               {favorite ? 'Remove' : 'Add'}
-            </Button>}
-  
+            </Button>
+          )}
         </VideoInfoContainer>
       </VideoContainer>
     </>

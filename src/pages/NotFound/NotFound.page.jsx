@@ -1,12 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import './NotFound.styles.css';
+
+const styleHomeLink = {
+  fontSize: '1rem',
+  textDecoration: 'none',
+  display: 'block',
+  textAlign: 'right',
+  padding: '0.2rem 0.3rem',
+}
 
 function NotFoundPage() {
   return (
-    <section className="not-found">
-      <Link to="/" className="home-link">
+    <section style={styleHomeLink}>
+      <Link to="/">
         home
       </Link>
       <img src="404.gif" alt="page not found" />

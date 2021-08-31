@@ -5,7 +5,7 @@ import Search from 'components/Search/Search';
 import GlobalProvider from 'store/global.provider';
 
 describe('Search component', () => {
-  it('renders Search component', () => {
+  it('renders Input ', () => {
     render(
       <GlobalProvider>
         <Search />
@@ -14,5 +14,16 @@ describe('Search component', () => {
 
     const inputEl = screen.getByTestId('search-input');
     expect(inputEl).toBeInTheDocument();
+  });
+
+  it('renders Search container', () => {
+    render(
+      <GlobalProvider>
+        <Search />
+      </GlobalProvider>
+    );
+
+    const searchContainer = screen.getByTestId('search-container');
+    expect(searchContainer).toBeInTheDocument();
   });
 });

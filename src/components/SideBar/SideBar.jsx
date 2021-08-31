@@ -12,8 +12,10 @@ import { SideBarContainer } from './Styles';
 
 export default function SideBar({ toggleSideBar, open }) {
   const { push } = useHistory();
-  const { state: { user } } = useGlobalProvider();
-   
+  const {
+    state: { user },
+  } = useGlobalProvider();
+
   const isLoggedIn = Boolean(user);
 
   const handleClose = () => {

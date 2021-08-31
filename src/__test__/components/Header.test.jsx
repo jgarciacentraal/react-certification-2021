@@ -4,19 +4,16 @@ import { render, screen } from '@testing-library/react';
 import Header from 'components/Header/Header';
 import GlobalProvider from 'store/global.provider';
 
-
 describe('Show header', () => {
-  it( 'render a search' , () => {
+  it('render a header container', () => {
     render(
       <GlobalProvider value={{ theme: 'light' }}>
-        <Header/>
+        <Header />
       </GlobalProvider>
     );
 
     const headerElement = screen.getByTestId('header-container');
     expect(headerElement).toBeInTheDocument();
-  })
-  
+  });
 
-  
 });

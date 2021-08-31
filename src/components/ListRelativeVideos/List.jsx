@@ -10,7 +10,7 @@ import { ListContainer, ListVideoItem, ListImg, ListDetail } from './Styles';
 import { useFetch } from '../../utils/hooks/useFetch';
 
 export default function List(props) {
-  // TODO recibir el id para mandarlo al hook de useFetch y traer videos
+  
   const { videosRelated, error } = useFetch(props.videoId);
   const { dispatch } = useGlobalProvider();
 
@@ -21,7 +21,7 @@ export default function List(props) {
   if (error) return <>Network error</>;
 
   return (
-    <ListContainer>
+    <ListContainer data-testid="list-ctn">
       {videosRelated?.items &&
         videosRelated?.items.map((video) => {
           const snippet = video?.snippet ? video.snippet : false;

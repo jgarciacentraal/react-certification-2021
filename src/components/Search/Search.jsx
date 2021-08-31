@@ -14,7 +14,6 @@ export default function Search() {
   } = useGlobalProvider();
 
   const onHandleSearch = (event) => {
-    console.log(event.target.value);
     const { value } = event.target;
     if (event.key === 'Enter') {
       onChangeSearch(dispatch, value);
@@ -27,7 +26,7 @@ export default function Search() {
   }, [dispatch, searchValue]);
 
   return (
-    <SearchContainer>
+    <SearchContainer data-testid="search-container" >
       <InputText
         data-testid="search-input"
         placeholder="Buscar"
