@@ -29,20 +29,19 @@ export default function Video() {
   if (!videoSelected) return <>Loading...</>;
   return (
     <>
-    <VideoRow>
-      <VideoColumn>
-        <VideoDetail
-          video={{
-            user,
-            videoSelected,
-            favorite,
-          }}
-        />
-      </VideoColumn>
-      
-      <List videoId={id} />
-      
-    </VideoRow>
+      <VideoRow>
+        <VideoColumn>
+          <VideoDetail
+            video={{
+              user,
+              videoSelected,
+              favorite,
+            }}
+          />
+        </VideoColumn>
+
+        <List videoId={id} />
+      </VideoRow>
     </>
   );
 }

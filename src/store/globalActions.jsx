@@ -1,6 +1,8 @@
-//import { mockVideos } from '../mockData';
+// import { mockVideos } from '../mockData';
+
 
 import loginApi from '../service/login.api';
+
 
 export const GLOBAL_ACTIONS = {
   SWITCH_THEME: 'SWITCH_THEME',
@@ -48,7 +50,7 @@ export const fetchVideos = async (dispatch, searchValue, select) => {
       }
     );
     const videoList = await response.json();
-    //const videoList = mockVideos;
+    // const videoList = mockVideos;
     console.log('getting data...');
     dispatch({ type: GLOBAL_ACTIONS.GET_VIDEOS_SUCCESS, videoList });
 

@@ -15,5 +15,4 @@ describe('Show header', () => {
     const headerElement = screen.getByTestId('header-container');
     expect(headerElement).toBeInTheDocument();
   });
-
 });

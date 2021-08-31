@@ -10,7 +10,6 @@ import { ListContainer, ListVideoItem, ListImg, ListDetail } from './Styles';
 import { useFetch } from '../../utils/hooks/useFetch';
 
 export default function List(props) {
-  
   const { videosRelated, error } = useFetch(props.videoId);
   const { dispatch } = useGlobalProvider();
 

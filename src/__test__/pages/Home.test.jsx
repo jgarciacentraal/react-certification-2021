@@ -5,7 +5,6 @@ import HomePage from 'pages/Home/Home.page';
 import GlobalProvider from 'store/global.provider';
 
 describe('Home page', () => {
-  
   test('renders a title', () => {
     render(
       <GlobalProvider>
@@ -25,7 +24,7 @@ describe('Home page', () => {
     );
 
     const items = jest.fn();
-    [1].map(x => items(x));
+    [1].map((x) => items(x));
     expect(items).toBeCalledWith(expect.anything());
-  }) 
+  });
 });

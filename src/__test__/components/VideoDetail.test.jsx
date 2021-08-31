@@ -3,10 +3,9 @@ import { render, screen } from '@testing-library/react';
 import { Router } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
 
-import { mockFavorites } from '../../mockData'
-
 import VideoDetail from 'components/VideoDetail/VideoDetail';
 import GlobalProvider from 'store/global.provider';
+import { mockFavorites } from '../../mockData';
 
 const user = {
   id: '123',
@@ -16,7 +15,6 @@ const user = {
 };
 const videoSelected = mockFavorites[1];
 const favorite = true;
-
 
 const history = createMemoryHistory();
 const allProviders = ({ children }) => {
@@ -28,10 +26,9 @@ const allProviders = ({ children }) => {
 };
 
 test('Test PlayDetail component', async () => {
-  render(
-    <VideoDetail video={{ user, videoSelected, favorite }} />,
-    { wrapper: allProviders }
-  );
+  render(<VideoDetail video={{ user, videoSelected, favorite }} />, {
+    wrapper: allProviders,
+  });
 
   // Looking for elements
   const iFrame = screen.getByTitle('playVideo');
@@ -45,8 +42,4 @@ test('Test PlayDetail component', async () => {
 
   const descrpition = screen.getByTestId('descrpition-detail');
   expect(descrpition).toBeInTheDocument();
-
 });
-
-
-

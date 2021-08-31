@@ -8,7 +8,6 @@ const favorites = window.localStorage.getItem(VIDEOS_STORAGE)
   ? JSON.parse(window.localStorage.getItem(VIDEOS_STORAGE))
   : [];
 
-// const localTheme = window.localStorage.getItem('theme');
 
 export const initialState = {
   fetchingVideo: false,

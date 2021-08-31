@@ -24,7 +24,6 @@ export default function LoginPage() {
     dispatch,
   } = useGlobalProvider();
 
-
   const close = () => {
     showModal(dispatch, false);
     history.push('/');

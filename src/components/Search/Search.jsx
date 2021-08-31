@@ -26,7 +26,7 @@ export default function Search() {
   }, [dispatch, searchValue]);
 
   return (
-    <SearchContainer data-testid="search-container" >
+    <SearchContainer data-testid="search-container">
       <InputText
         data-testid="search-input"
         placeholder="Buscar"

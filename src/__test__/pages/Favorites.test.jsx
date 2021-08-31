@@ -8,7 +8,6 @@ import { globalReducer } from 'store/GlobalReducer';
 import Favorites from 'pages/Favorites/FavoritesPage';
 import { mockFavorites } from '../../mockData';
 
-
 describe('Testing Favorite page', () => {
   const history = createMemoryHistory();
   history.push('/favorites');
@@ -45,9 +44,8 @@ describe('Testing Favorite page', () => {
       wrapper: allProviders,
     });
 
-    const sectionElement = screen.getByTestId("section-favorites")
+    const sectionElement = screen.getByTestId('section-favorites');
     expect(sectionElement).toBeInTheDocument();
-
   });
 
   it('show videos', () => {
@@ -56,8 +54,7 @@ describe('Testing Favorite page', () => {
     });
 
     const mockFav = jest.fn();
-    [1].map(x => mockFav(x));
+    [1].map((x) => mockFav(x));
     expect(mockFav).toBeCalledWith(expect.anything());
-
-  })
+  });
 });
