@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Title = styled.div`
   flex-basis: 100%;
   text-align: center;
-  h3 {
+  h1 {
     font-family: monospace;
     font-size: 2rem;
     margin: 15px 0px 15px 0px;
@@ -11,7 +11,7 @@ export const Title = styled.div`
   }
 `;
 
-export const VideoContent = styled.div`
+export const Grid = styled.div`
   display: flex;
   gap: 10px;
   justify-content: center;
